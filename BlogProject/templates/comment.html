@@ -1,0 +1,37 @@
+<div class="col-md-8 card mb-4  mt-3 "> 
+    <div class="card-body">
+        <!-- comments -->
+        <h5>{{ comments.count }} Comments</h5>
+
+                
+        {% for comment in comments %}
+        <div class="comments">
+            <p class="font-weight-bold">
+                      {{ comment.name }}
+                      <span class=" text-muted font-weight-normal">
+                        {{ comment.created_on }}
+                      </span>
+                    </p>
+                    {{ comment.body | linebreaks }}
+                  </div>
+                  {% endfor %}
+                </div>
+            </div>
+              <div class="col-md-8 card mb-4  mt-3 ">
+                    <div class="card-body">
+                        {% if new_comment %}
+                        <div class="alert alert-success" role="alert">
+                            Your comment is awaiting APPROVAL
+                        </div>
+                        {% else %}
+                        <h6 class="text-muted font-weight-normal">Leave a comment</h6>
+                        <form method="post" style="margin-top: 1.3em;">
+                            {{ comment_form.as_p }}
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-primary  btn-lg">Submit</button>
+                        </form>
+                        {% endif %}
+                    </div>
+                </div>	
+            </div>
+            
