@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'TolusBlog',
+    
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,12 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# EMAIL_HOST = '' # mail service smtp
+# EMAIL_HOST_USER = '' # email id
+# EMAIL_HOST_PASSWORD = '' #password
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_FILE_PATH = str(BASE_DIR.joinpath('sent_emails'))
+
